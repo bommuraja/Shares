@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Ndh4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Share">
+          <Key>
+            <PropertyRef Name="ShareId" />
+          </Key>
+          <Property Name="ShareId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LFNo" Type="bigint" />
+          <Property Name="CertificateNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersonToWhomTransfered" Type="nvarchar" MaxLength="50" />
+          <Property Name="NoOfShares" Type="bigint" />
+          <Property Name="DistinctiveFromNo" Type="bigint" />
+          <Property Name="DistinctiveToNo" Type="bigint" />
+          <Property Name="TransferDate" Type="date" />
+          <Property Name="MobileNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="AadhaarNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="PanNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="VoterNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="RationCardNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankAccountNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankDetails" Type="nvarchar" MaxLength="50" />
+          <Property Name="OptionalColumnOne" Type="nvarchar" MaxLength="50" />
+          <Property Name="OptionalColumnTwo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Ndh4ModelStoreContainer">
+          <EntitySet Name="Share" EntityType="Self.Share" Schema="Ndh4" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Ndh4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Share">
+          <Key>
+            <PropertyRef Name="ShareId" />
+          </Key>
+          <Property Name="ShareId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LFNo" Type="Int64" />
+          <Property Name="CertificateNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PersonToWhomTransfered" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NoOfShares" Type="Int64" />
+          <Property Name="DistinctiveFromNo" Type="Int64" />
+          <Property Name="DistinctiveToNo" Type="Int64" />
+          <Property Name="TransferDate" Type="DateTime" Precision="0" />
+          <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AadhaarNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PanNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VoterNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RationCardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OptionalColumnOne" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OptionalColumnTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Ndh4Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Shares" EntityType="Self.Share" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Ndh4ModelStoreContainer" CdmEntityContainer="Ndh4Entities">
+          <EntitySetMapping Name="Shares">
+            <EntityTypeMapping TypeName="Ndh4Model.Share">
+              <MappingFragment StoreEntitySet="Share">
+                <ScalarProperty Name="ShareId" ColumnName="ShareId" />
+                <ScalarProperty Name="LFNo" ColumnName="LFNo" />
+                <ScalarProperty Name="CertificateNo" ColumnName="CertificateNo" />
+                <ScalarProperty Name="PersonToWhomTransfered" ColumnName="PersonToWhomTransfered" />
+                <ScalarProperty Name="NoOfShares" ColumnName="NoOfShares" />
+                <ScalarProperty Name="DistinctiveFromNo" ColumnName="DistinctiveFromNo" />
+                <ScalarProperty Name="DistinctiveToNo" ColumnName="DistinctiveToNo" />
+                <ScalarProperty Name="TransferDate" ColumnName="TransferDate" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="AadhaarNumber" ColumnName="AadhaarNumber" />
+                <ScalarProperty Name="PanNumber" ColumnName="PanNumber" />
+                <ScalarProperty Name="VoterNumber" ColumnName="VoterNumber" />
+                <ScalarProperty Name="RationCardNumber" ColumnName="RationCardNumber" />
+                <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+                <ScalarProperty Name="BankDetails" ColumnName="BankDetails" />
+                <ScalarProperty Name="OptionalColumnOne" ColumnName="OptionalColumnOne" />
+                <ScalarProperty Name="OptionalColumnTwo" ColumnName="OptionalColumnTwo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
